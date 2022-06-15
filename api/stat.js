@@ -1,6 +1,6 @@
 var { db } = require("../util/admin");
 
-//var statDb = db.collection('');
+var statDb = db.collection('Statistique');
 
 
 const statFil = async (req, res) => {

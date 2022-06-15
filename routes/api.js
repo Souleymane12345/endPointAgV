@@ -10,13 +10,11 @@ const {book,
     bookFil,
    } = require('../handlers/books');
 
-
-
-const {rSim,
-    rSimId,
+const {rempSim,
+    rempSimId,
     identSim,
-    identSimId,
-    } = require('../api/request');
+    identSimId} = require('../api/req')
+
 
 const { infCom,
         infComId,
@@ -43,38 +41,37 @@ router.delete('/books/delete/:id', bookDel);
 
 /**   Routes des demandes */
 
-/*** 
-router.get('/rSim', rSim);
-router.get('/rSimId/:id', rSimId);
+/*** */
+router.get('/rempSim', rempSim);
+router.get('/rempSimId/:id', rempSimId);
 router.get('/identSim', identSim);
 router.get('/identSimId/:id', identSimId);
-*/
 
 /**   Routes des informations comerciale */
 
 
-/** 
+/** */
 router.get('/infCom', infCom);
 router.post('/infCom/post', infComPo);
 router.get('/infCom/:id', infComId);
 router.put('/infCom/update/:id', infComUp);
 router.delete('/infCom/delete/:id', infComDel);
-*/
+
 /**   Routes des statisques */
 
-/** 
-router.get('/stat/filter', bookFil);
-*/
+/** */
+router.get('/stat/filter', statFil);
+
 
 /**   Routes des enquêtes */
 
-/**
+/** */
 router.get('/inv', inv);
 router.post('/inv/post', invPo);
 router.get('/inv/:id', invId);
 router.put('/inv/update/:id', invUp);
 router.delete('/inv/delete/:id', invDel);
- */
+
 
 module.exports = router;
 

@@ -1,6 +1,6 @@
 var { db } = require("../util/admin");
-//var rdb = db.collection('...');
-//var idb = db.collection('...');
+var rdb = db.collection('DemandeIdent');
+var idb = db.collection('DemandeIdent');
 
 /**         Remplacement de carte la SIM    */
 const rSim = async (req, res) => {
@@ -74,3 +74,4 @@ module.export = {
     identSim,
     identSimId,
 }
+

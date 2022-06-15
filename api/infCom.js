@@ -1,5 +1,5 @@
 var { db } = require("../util/admin");
-//var infDb = db.collection('...');
+var infDb = db.collection('InfoCommerciale');
 
 
 const infCom = async (req, res) => {

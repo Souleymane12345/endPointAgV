@@ -1,5 +1,5 @@
 var { db } = require("../util/admin");
-//var invDb = db.collection('...');
+var invDb = db.collection('enquêteClient');
 
 
 const inv = async (req, res) => {
