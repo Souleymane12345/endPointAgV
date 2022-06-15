@@ -23,7 +23,7 @@ const rSim = async (req, res) => {
 
 const rSimId = async (req, res) => {
     try {
-        const document = rdb.doc(req.params.item_id);
+        const document = rdb.doc(req.params.id);
         let item = await document.get();
         let response = item.data();
         return res.status(200).send(response);
