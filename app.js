@@ -43,7 +43,6 @@ app.use(bodyParser.json());
 */
 
 // error handler
-/** */
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -53,9 +52,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-//var port = process.env.PORT || 4500
+var port = process.env.PORT || 4500
 
-server.listen(process.env.PORT || 3001, '0.0.0.0', () => {
-  console.log("Server is running.");
-});
+app.listen(port);
 module.exports = app;
