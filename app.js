@@ -52,7 +52,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-var port = process.env.PORT
+//var port = process.env.PORT || 4500
 
-server.listen(port);
+server.listen(process.env.PORT || 5000);
 module.exports = app;
