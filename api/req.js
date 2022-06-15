@@ -1,13 +1,12 @@
 var { db } = require("../util/admin");
-var rdb = db.collection('DemandeIdent');
+var rdb = db.collection('DemandeRempla');
 var idb = db.collection('DemandeIdent');
 
-/**         Remplacement de carte la SIM    */
-const rSim = async (req, res) => {
+const rempSim = async (req, res) => {
     
     try{
-        rdb.get().then((snapshot) => {
-            const data = snapshot.docs.map((doc) => ({
+            rdb.get().then((snapshot) => {
+            var data = snapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
         }));
@@ -17,11 +16,11 @@ const rSim = async (req, res) => {
     } catch (error) {
         return res
         .status(500)
-        .send(error);         
+        .json({ general: "Something went wrong, please try again"});          
     }
-}
+};
 
-const rSimId = async (req, res) => {
+const rempSimId = async (req, res) => {
     try {
         const document = rdb.doc(req.params.id);
         let item = await document.get();
@@ -35,12 +34,11 @@ const rSimId = async (req, res) => {
     }
 }
 
-/**         Identification de la carte SIM    */
-
-const identSim = async (req, res) => {s
+const identSim = async (req, res) => {
+    
     try{
-        idb.get().then((snapshot) => {
-            const data = snapshot.docs.map((doc) => ({
+            idb.get().then((snapshot) => {
+            var data = snapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
         }));
@@ -50,13 +48,13 @@ const identSim = async (req, res) => {s
     } catch (error) {
         return res
         .status(500)
-        .send(error);          
+        .json({ general: "Something went wrong, please try again"});          
     }
-}
+};
 
 const identSimId = async (req, res) => {
     try {
-        let document = idb.doc(req.params.item_id);
+        const document = rdb.doc(req.params.id);
         let item = await document.get();
         let response = item.data();
         return res.status(200).send(response);
@@ -68,10 +66,13 @@ const identSimId = async (req, res) => {
     }
 }
 
-module.export = {
-    rSim,
-    rSimId,
+
+module.exports = {
+    rempSim,
+    rempSimId,
     identSim,
     identSimId,
-}
 
+
+    
+}

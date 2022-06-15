@@ -10,13 +10,13 @@ const {book,
     bookFil,
    } = require('../handlers/books');
 
-   /** 
+   /** */
 const {rempSim,
     rempSimId,
     identSim,
     identSimId} = require('../api/req')
 
-*/
+
 const { infCom,
         infComId,
         infComUp,
@@ -42,12 +42,12 @@ router.delete('/books/delete/:id', bookDel);
 
 /**   Routes des demandes */
 
-/***
+
 router.get('/rempSim', rempSim);
 router.get('/rempSimId/:id', rempSimId);
 router.get('/identSim', identSim);
 router.get('/identSimId/:id', identSimId);
- */
+ /****/
 /**   Routes des informations comerciale */
 
 
